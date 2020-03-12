@@ -1,0 +1,14 @@
+.helloWorld {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+
+    background-color: blue;
+    border: 5px solid black;
+
+    text-align: center;
+}
+
+.helloWorld__title {
+    text-transform: uppercase;
+}

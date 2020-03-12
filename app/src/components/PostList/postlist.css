@@ -1,0 +1,19 @@
+.postlist {
+    max-width: 700px;
+    list-style: none;
+
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 0;
+}
+
+.postlist__item {
+    height: 100px;
+    border: 3px solid black;
+    border-bottom: none;
+    background-color: burlywood;
+}
+
+.postlist__item:last-child {
+    border-bottom: 3px solid black;
+}
