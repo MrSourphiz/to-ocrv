@@ -1,0 +1,13 @@
+.post {
+    color: black;
+    text-decoration: none;
+}
+
+.post:hover {
+    color: grey;
+}
+
+.post__username, 
+.post__title {
+    margin-left: 10px;
+}

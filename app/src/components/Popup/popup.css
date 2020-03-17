@@ -1,0 +1,18 @@
+.popup {
+    position: fixed;
+    top: 100px;
+    left: 40%;
+
+    width: 400px;
+
+    text-align: center;
+
+    background-color: grey;
+    border: 3px solid black;
+}
+
+.popup__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
