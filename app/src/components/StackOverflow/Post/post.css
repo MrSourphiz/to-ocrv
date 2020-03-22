@@ -3,7 +3,8 @@
     text-decoration: none;
 }
 
-.post:hover {
+.post:hover > .post__username,
+.post:hover > .post__title {
     color: grey;
 }
 
