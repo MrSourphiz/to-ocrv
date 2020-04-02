@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
-import { Link } from "react-router-dom"
-import { ReactComponent as GoLogo } from '../../images/go_logo.svg';
+import { Link } from 'react-router-dom';
 
-import PropTypes from 'prop-types';
+/*import PropTypes from 'prop-types';*/
 import './popup.css';
 
 class Popup extends Component {
     state = {
-        visible: this.props.visible,
-        link: this.props.link,
-        title: this.props.title,
-        owner: this.props.owner,
-        is_answered: this.props.title,
-        tags: this.props.owner
+        path: this.props.path,
+        visible: this.props.visible
     };
 
     handleClick = () => {
@@ -22,39 +17,40 @@ class Popup extends Component {
     }
 
     render() {
-        const { link } = this.state;
-        const { title } = this.state;
-        const { owner } = this.state;
-        const { is_answered } = this.state;
-        const { tags } = this.state;
+        console.log(this.props)
+        const { path } = this.state;
         return (
             this.state.visible && 
             <div className = 'popup'>
                 <h2 className = 'popup__text'>Подтвердите переход</h2>
-                <Link to='/detail' className = 'popup__open' link = {link} is_answered = {is_answered} tags={tags} owner={owner} title={title}>
-                    <GoLogo className='back-button__logo' />
-                </Link>
-                <button className = 'popup__close' onClick = {this.handleClick}>Закрыть</button>
+                <Link className = 'button__open' 
+                        to={{pathname: `${path}/detail`,  
+                            state:{owner: this.props.owner, 
+                            title: this.props.title, 
+                            link: this.props.link, 
+                            property1: this.props.property1, 
+                            property2: this.props.property2} }}>Перейти</Link>
+                <button className = 'popup__close' aria-label='Закрыть' onClick = {this.handleClick}></button>
             </div>
         )
     }
 }
 
 export default Popup;
-Popup.propTypes = {
-    visible: PropTypes.string,
-    link: PropTypes.string,
-    title: PropTypes.string,
+/*Popup.propTypes = {
     owner: PropTypes.string,
-    is_answered: PropTypes.string,
-    tags: PropTypes.string
+    title: PropTypes.string,
+    link: PropTypes.string,
+    property1: PropTypes.string,
+    path: PropTypes.string,
+    visible: PropTypes.bool
   };
   
 Popup.defaultProps = {
-    visible: '',
-    link: '',
-    title: '',
     owner: '',
-    is_answered: '',
-    tags: ''
-};
+    title: '',
+    link: '',
+    property1: '',
+    path: '',
+    visible: ''
+};*/

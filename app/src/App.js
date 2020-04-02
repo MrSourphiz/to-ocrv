@@ -9,20 +9,22 @@ import {
 
 import MainPage from './components/MainPage/MainPage'
 import Posts from './components/StackOverflow/Posts/Posts'
-import BackButton from './components/Popups/BackButton'
 import Detail from './components/Detail/Detail'
 
+
 class App extends Component {
+
   render() {
     const { history } = this.props
 
     return (
       <div className="App">
         <Switch>
-          <Route history={history} path='/home' component={MainPage} />
-          <Route history={history} path='/home' component={BackButton} />
-          <Route history={history} path='/detail' component={Detail} />
-          <Route history={history} path='/sf' component={Posts} />
+          <Route exact path='/home' history={history} component={MainPage} />
+          <Route path='/sf/detail' history={history} component={Detail} />
+          <Route path='/gh/detail' history={history} component={Detail} />
+          <Route path='/sf' history={history} component={Posts} />
+          <Route path='/gh' history={history} component={Posts} />
           <Redirect from='/' to='/home'/>
         </Switch>
       </div>

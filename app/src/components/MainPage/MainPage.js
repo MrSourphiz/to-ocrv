@@ -6,8 +6,8 @@ import { ReactComponent as GitHub } from '../../images/gh_logo.svg';
 import { ReactComponent as StackOverflow } from '../../images/sf_logo.svg';
 
 const SECTIONS = [
-    { title: 'GitHub', href: '/gh', Icon: GitHub },
-    { title: 'Stack Overflow', href: '/sf', Icon: StackOverflow}
+    { id: 1, title: 'GitHub', href: '/gh', Icon: GitHub },
+    { id: 2, title: 'Stack Overflow', href: '/sf', Icon: StackOverflow}
 ]
 
 class MainPage extends Component {
@@ -17,15 +17,15 @@ class MainPage extends Component {
                 <ul className = "main-page">
                     {SECTIONS.map(section => {
                         const {
-                            title, href, Icon
+                            id, title, href, Icon
                         } = section;
                         return (
-                            <li className = 'main-page__item'>
+                            <li className = 'main-page__item' key={id}>
                                 <Link className='main-page__link' to={href}>
                                     <Icon className='main-page__logo' />
                                     <h2 className='main-page__title'>{title}</h2>
                                 </Link>
-                            </li>
+                            </li>  
                         ) 
                     })}
                 </ul>

@@ -1,10 +1,23 @@
 .post {
+    min-height: 130px;
+
     color: black;
     text-decoration: none;
+
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.post:hover,
+.post:focus {
+    border-color: grey;
+    cursor: pointer;
 }
 
 .post:hover > .post__username,
-.post:hover > .post__title {
+.post:hover > .post__title,
+.post:focus > .post__username,
+.post:focus > .post__title {
     color: grey;
 }
 

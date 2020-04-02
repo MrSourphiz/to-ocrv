@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+/*import PropTypes from 'prop-types';*/
 import './post.css';
 import Popup from '../../Popups/Popup';
 
 class Post extends Component {
     state = {
+        path: this.props.path,
         link: this.props.link,
         title: this.props.title,
+        property1: this.props.property1,
+        property2: this.props.property2,
         owner: this.props.owner,
-        is_answered: this.props.title,
-        tags: this.props.owner,
         visible: false
     };
 
@@ -21,37 +22,45 @@ class Post extends Component {
     }
 
     render () {
+        const { path } = this.state;
         const { link } = this.state;
         const { title } = this.state;
+        const { property1 } = this.state;
+        const { property2 } = this.state;
         const { owner } = this.state;
         const { visible } = this.state;
-        const { is_answered } = this.state;
-        const { tags } = this.state;
         return (
-            <a onClick = {this.handleClick} href={link} className = "post">
+            <div onClick = {this.handleClick}  className = "post">
                 <h2 className = "post__username">{owner}</h2>
                 <p className = "post__title">{title}</p>
-                {this.state.visible && <Popup visible = { visible } link = {link} is_answered = {is_answered} tags={tags} owner={owner} title={title}/>}
-            </a>
+                {this.state.visible && 
+                    <Popup 
+                        visible = { visible } 
+                        owner={owner} 
+                        title={title} 
+                        link={link} 
+                        property1={property1} 
+                        property2={property2} 
+                        path={path}/>}
+            </div>
         )
             
     }
 }
 
 export default Post;
-Post.propTypes = {
+/*Post.propTypes = {
+    path: PropTypes.string,
     link: PropTypes.string,
     title: PropTypes.string,
-    owner: PropTypes.string,
-    is_answered: PropTypes.string,
-    tags: PropTypes.arrayOf(PropTypes.tags)
+    property1: PropTypes.string,
+    owner: PropTypes.string
   };
   
 Post.defaultProps = {
+    path: '',
     link: '',
     title: '',
-    owner: '',
-    is_answered: '',
-    tags: ''
-};
-  
+    property1: '',
+    owner: ''
+};*/  
