@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 
 import MainPage from './components/MainPage/MainPage'
-import Posts from './components/StackOverflow/Posts/Posts'
+import Posts from './components/Posts/Posts'
 import Detail from './components/Detail/Detail'
 
 

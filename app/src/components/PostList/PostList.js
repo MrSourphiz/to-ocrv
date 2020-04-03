@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './postlist.css';
 
 import Post from '../Post/Post'; 
-import BackButton from '../../Popups/BackButton'
+import BackButton from '../Popups/BackButton'
 
 class PostList extends Component {
     render () {
@@ -24,6 +24,7 @@ class PostList extends Component {
                                         path={this.props.path}
                                         link={link} 
                                         title={title}
+                                        description=''
                                         owner={display_name}
                                         property1={is_answered.toString()}
                                         property2={tags.join(', ')}
@@ -32,14 +33,15 @@ class PostList extends Component {
                             ) 
                         } else {
                             const {
-                                url, description, author, language, stars
+                                url, name, description, author, language, stars
                             } = post;
                             return (
                                 <li className = "postlist__item" key={index}>
                                     <Post 
                                         path={this.props.path}
                                         link={url} 
-                                        title={description}
+                                        title={name}
+                                        description={description}
                                         owner={author}
                                         property1={language}
                                         property2={stars}
