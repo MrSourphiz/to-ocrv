@@ -14,7 +14,6 @@ class Popup extends Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             this.state.visible && 
             <div className = 'popup'>

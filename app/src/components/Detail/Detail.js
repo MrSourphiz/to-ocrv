@@ -49,7 +49,8 @@ class Detail extends Component {
             })
         }
     }
-    renderUrl = () => {
+
+    componentDidMount() {
         if (this.props.location.pathname === '/sf/detail') {
             this.renderDescision()
             this.renderTags()
@@ -67,12 +68,7 @@ class Detail extends Component {
         }
     }
 
-    componentDidMount() {
-        this.renderUrl()
-    }
-
     render () {
-        console.log(this.props.location.state);
         return (
             <div className='detail'>
                 <BackButton path={this.props.location.pathname}/>
@@ -84,8 +80,9 @@ class Detail extends Component {
                     </div>
                     
                 </div>
-                <p className='detail__title'><strong>{this.props.location.state.description}</strong></p>
-                <p className='detail__description'>Описание: {this.props.location.state.title}</p>
+                <h3 className='detail__title'>Название: {this.props.location.state.title}</h3>
+                <p className='detail__description'>Описание: {this.props.location.state.description}</p>
+                
                 
                 <a className='button__open' href={this.props.location.state.link}>Открыть {this.state.type} на {this.state.url}</a>
             </div>

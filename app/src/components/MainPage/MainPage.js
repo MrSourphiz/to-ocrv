@@ -13,8 +13,9 @@ const SECTIONS = [
 class MainPage extends Component {
     render() {
         return (
-            <div className = "container">
-                <ul className = "main-page">
+            <div className = 'main-page'>
+                <h1>Подборка постов за неделю с GitHub/Stack Overflow</h1>
+                <ul className = 'main-page__list'>
                     {SECTIONS.map(section => {
                         const {
                             id, title, href, Icon

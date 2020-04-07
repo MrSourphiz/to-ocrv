@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './postlist.css';
 
 import Post from '../Post/Post'; 
@@ -7,7 +6,6 @@ import BackButton from '../Popups/BackButton'
 
 class PostList extends Component {
     render () {
-        console.log(this.props)
         return (
             <div className = "container">
                 <BackButton path={this.props.path} />
@@ -15,7 +13,7 @@ class PostList extends Component {
                     {this.props.items.map((post, index) => {
                         if (this.props.path === '/sf') {
                             const {
-                                link, title, owner, is_answered, tags
+                                link, title, body_markdown, owner, is_answered, tags
                             } = post;
                             const { display_name } = owner;
                             return (
@@ -24,7 +22,7 @@ class PostList extends Component {
                                         path={this.props.path}
                                         link={link} 
                                         title={title}
-                                        description=''
+                                        description={body_markdown}
                                         owner={display_name}
                                         property1={is_answered.toString()}
                                         property2={tags.join(', ')}
@@ -58,13 +56,3 @@ class PostList extends Component {
 }
 
 export default PostList;
-
-PostList.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.any),
-    path: PropTypes.string
-  };
-  
-PostList.defaultProps = {
-    items: [],
-    path: ''
-};

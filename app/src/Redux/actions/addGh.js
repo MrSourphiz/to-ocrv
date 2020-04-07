@@ -1,12 +1,12 @@
-export function postsFetchDataSuccess(posts) {
+export function postsFetchDataSuccess(data) {
     return {
-        type: 'POSTS_FETCH_DATA_SUCCESS',
-        posts
+        type: 'ADD_GH',
+        posts: data
     }
 }
 
-export function postsFetchData(url) {
-    return (dispatch)=> {
+export function postsFetchDataGh(url) {
+    return (dispatch) => {
         fetch(url)
             .then(response => {
                 if(!response.ok) {
@@ -15,7 +15,7 @@ export function postsFetchData(url) {
                 return response;
             })
             .then(response=> response.json())
-            .then(posts => dispatch(postsFetchDataSuccess(posts)))
+            .then(data => dispatch(postsFetchDataSuccess(data)))
 
     }
 }

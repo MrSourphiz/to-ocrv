@@ -4,7 +4,8 @@ import Popup from '../Popups/Popup';
 
 class Post extends Component {
     state = {
-        visible: false
+        visible: false,
+        title: ''
     };
 
     handleClick = (evt) => {
@@ -14,11 +15,32 @@ class Post extends Component {
         })
     }
 
+    renderTitle = () => {
+        if (this.props.path === '/sf') {
+            this.setState({
+                title: this.props.title
+            })
+        } else {
+            this.setState({
+                title: this.props.description
+            })
+        }
+    }
+
+    componentDidMount() {
+        this.renderTitle()
+        if (this.props.title === '' || this.props.description === '') {
+            this.setState({
+                title: 'Отсутствует'
+            })
+        }
+    }
+
     render () {
         return (
             <div onClick = {this.handleClick}  className = "post">
                 <h2 className = "post__username">Автор: {this.props.owner}</h2>
-                <p className = "post__title">{this.props.title}</p>
+                <p className = "post__title">Описание: {this.state.title}</p>
                 {this.state.visible && 
                     <Popup 
                         visible = {this.state.visible} 

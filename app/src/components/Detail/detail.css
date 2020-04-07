@@ -40,6 +40,11 @@
 .detail__description,
 .detail__title {
     margin-left: 10px;
+    margin-right: 10px;
+}
+
+.detail__description {
+    word-wrap: break-word;
 }
 
 .button__open {
