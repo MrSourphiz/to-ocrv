@@ -19,15 +19,7 @@ class Popup extends Component {
             <div className = 'popup'>
                 <h2 className = 'popup__text'>Подтвердите переход</h2>
                 <Link className = 'button__open' 
-                        to={{pathname: `${this.props.path}/detail`,  
-                            state:{
-                                owner: this.props.owner, 
-                                title: this.props.title,
-                                description: this.props.description, 
-                                link: this.props.link, 
-                                property1: this.props.property1, 
-                                property2: this.props.property2} 
-                            }}>Перейти</Link>
+                        to={ {pathname: `${this.props.path}/detail`,  state:{index: this.props.index}} }>Перейти</Link>
                 <button className = 'popup__close' aria-label='Закрыть' onClick = {this.handleClick}></button>
             </div>
         )

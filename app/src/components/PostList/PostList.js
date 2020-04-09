@@ -1,58 +1,63 @@
-import React, { Component } from 'react';
-import './postlist.css';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-import Post from '../Post/Post'; 
+import './postlist.css'
+
 import BackButton from '../Popups/BackButton'
+import Loader from '../Loader/Loader'
+
+import { getData } from '../../Redux/actions/getData'
+import { getGhData } from '../../Redux/actions/getDataGh'
+import { MapData} from '../../containers/MapData'
 
 class PostList extends Component {
+    componentDidMount() {
+        if (this.props.location.pathname === '/sf') {
+            this.props.getDataAction('https://api.stackexchange.com/2.2/questions?order=asc&sort=week&site=stackoverflow&filter=!9Z(-wwK4f')
+        } else {
+            this.props.getGhDataAction('https://github-trending-api.now.sh/repositories?language=&since=weekly')
+        }
+    }
+
+    renderList = (dataSf, dataGh) => {
+        if (this.props.location.pathname === '/sf') {
+            return MapData(dataSf, this.props.location.pathname)
+        } else {
+            return MapData(dataGh, this.props.location.pathname)
+        }
+    }
+
     render () {
+        const {dataSf, dataGh, loading} = this.props
+        
         return (
-            <div className = "container">
-                <BackButton path={this.props.path} />
-                <ul className = "postlist">
-                    {this.props.items.map((post, index) => {
-                        if (this.props.path === '/sf') {
-                            const {
-                                link, title, body_markdown, owner, is_answered, tags
-                            } = post;
-                            const { display_name } = owner;
-                            return (
-                                <li className = "postlist__item" key={index}>
-                                    <Post 
-                                        path={this.props.path}
-                                        link={link} 
-                                        title={title}
-                                        description={body_markdown}
-                                        owner={display_name}
-                                        property1={is_answered.toString()}
-                                        property2={tags.join(', ')}
-                                    />
-                                </li>
-                            ) 
-                        } else {
-                            const {
-                                url, name, description, author, language, stars
-                            } = post;
-                            return (
-                                <li className = "postlist__item" key={index}>
-                                    <Post 
-                                        path={this.props.path}
-                                        link={url} 
-                                        title={name}
-                                        description={description}
-                                        owner={author}
-                                        property1={language}
-                                        property2={stars}
-                                    />
-                                </li>
-                            ) 
-                        }
-                        
-                    })}
-                </ul>
-            </div>
+            <section>
+                {loading 
+                    ?  <Loader /> 
+                    :  <div className = "container">
+                            <BackButton path={this.props.path} />
+                            {this.renderList(dataSf, dataGh)}
+                        </div>
+                }
+            </section>
         )
     }
 }
 
-export default PostList;
+const mapStateToProps = state => {
+    return {
+        dataSf: state.dataSf,
+        dataGh: state.dataGh,
+        loading: state.loading
+    }
+}
+  
+const mapDispatchToProps = dispatch => {
+    return {
+      getDataAction: (URL) => dispatch(getData(URL)),
+      getGhDataAction: (URL) => dispatch(getGhData(URL))
+    }
+}
+  
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostList);
