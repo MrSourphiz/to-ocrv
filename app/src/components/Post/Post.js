@@ -41,7 +41,6 @@ class Post extends Component {
 
     render () {
         const {path, index} = this.props
-        console.log(this.props)
         return (
             <li onClick = {this.handleClick}  className = "post">
                 <h2 className = "post__username">Автор: {this.state.author}</h2>

@@ -1,11 +1,11 @@
-export function getDataSuccess(response) {
+export function getSfDataSuccess(response) {
     return {
         type: 'GET_DATA_SUCCESS',
         payload: response.items
     }
 }
 
-export function getData(url) {
+export function getSfData(url) {
     return (dispatch) => {
         dispatch({
             type: 'GET_DATA_REQUEST'
@@ -21,6 +21,6 @@ export function getData(url) {
                 return response;
             })
             .then(response=> response.json())
-            .then(response => dispatch(getDataSuccess(response)))
+            .then(response => dispatch(getSfDataSuccess(response)))
     }
 }
