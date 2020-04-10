@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/to-ocrv/static/css/main.0358b3b0.chunk.css",
+    "main.js": "/to-ocrv/static/js/main.5e0ecb3c.chunk.js",
+    "main.js.map": "/to-ocrv/static/js/main.5e0ecb3c.chunk.js.map",
+    "runtime-main.js": "/to-ocrv/static/js/runtime-main.14e45918.js",
+    "runtime-main.js.map": "/to-ocrv/static/js/runtime-main.14e45918.js.map",
+    "static/js/2.a94fa4cd.chunk.js": "/to-ocrv/static/js/2.a94fa4cd.chunk.js",
+    "static/js/2.a94fa4cd.chunk.js.map": "/to-ocrv/static/js/2.a94fa4cd.chunk.js.map",
+    "index.html": "/to-ocrv/index.html",
+    "precache-manifest.5850fcf4064bff2f2268b4a65418db35.js": "/to-ocrv/precache-manifest.5850fcf4064bff2f2268b4a65418db35.js",
+    "service-worker.js": "/to-ocrv/service-worker.js",
+    "static/css/main.0358b3b0.chunk.css.map": "/to-ocrv/static/css/main.0358b3b0.chunk.css.map",
+    "static/js/2.a94fa4cd.chunk.js.LICENSE.txt": "/to-ocrv/static/js/2.a94fa4cd.chunk.js.LICENSE.txt",
+    "static/media/back_logo.aa735614.svg": "/to-ocrv/static/media/back_logo.aa735614.svg",
+    "static/media/gh_logo.0187055f.svg": "/to-ocrv/static/media/gh_logo.0187055f.svg",
+    "static/media/sf_logo.4af4bb12.svg": "/to-ocrv/static/media/sf_logo.4af4bb12.svg",
+    "static/media/star.09e204ef.svg": "/to-ocrv/static/media/star.09e204ef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.14e45918.js",
+    "static/js/2.a94fa4cd.chunk.js",
+    "static/css/main.0358b3b0.chunk.css",
+    "static/js/main.5e0ecb3c.chunk.js"
+  ]
+}
