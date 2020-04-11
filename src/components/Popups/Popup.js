@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './popup.css';
 
 class Popup extends Component {
@@ -24,6 +24,6 @@ class Popup extends Component {
             </div>
         )
     }
-}
+};
 
 export default Popup;

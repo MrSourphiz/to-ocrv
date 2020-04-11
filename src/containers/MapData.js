@@ -1,5 +1,5 @@
-import React from 'react'
-import Post from '../components/Post/Post'
+import React from 'react';
+import Post from '../components/Post/Post';
 
 export function MapData(array, path) {
   const listItems = array.map((item, index) =>
@@ -9,5 +9,5 @@ export function MapData(array, path) {
     <ul className = "postlist">
       {listItems}
     </ul>
-  );
-}
+  )
+};

@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
-import './postlist.css'
+import './postlist.css';
 
-import BackButton from '../Popups/BackButton'
-import Loader from '../Loader/Loader'
+import BackButton from '../Popups/BackButton';
+import Loader from '../Loader/Loader';
 
-import {getSfData} from '../../Redux/actions/getDataSf'
-import {getGhData} from '../../Redux/actions/getDataGh'
-import {MapData} from '../../containers/MapData'
+import {getSfData} from '../../Redux/actions/getDataSf';
+import {getGhData} from '../../Redux/actions/getDataGh';
+import {MapData} from '../../containers/MapData';
 
 class PostList extends Component {
     componentDidMount() {
@@ -17,7 +17,7 @@ class PostList extends Component {
         } else if (this.props.location.pathname === '/gh') {
             this.props.getGhDataAction('https://github-trending-api.now.sh/repositories?language=&since=weekly')
         }
-    }
+    };
 
     renderList = (dataSf, dataGh) => {
         if (this.props.location.pathname === '/sf') {
@@ -25,7 +25,7 @@ class PostList extends Component {
         } else {
             return MapData(dataGh, this.props.location.pathname)
         }
-    }
+    };
 
     render () {
         const {dataSf, dataGh, loading} = this.props
@@ -41,7 +41,7 @@ class PostList extends Component {
             </section>
         )
     }
-}
+};
 
 const mapStateToProps = state => {
     return {
@@ -49,14 +49,14 @@ const mapStateToProps = state => {
         dataGh: state.dataGh,
         loading: state.loading
     }
-}
+};
   
 const mapDispatchToProps = dispatch => {
     return {
       getSfDataAction: (URL) => dispatch(getSfData(URL)),
       getGhDataAction: (URL) => dispatch(getGhData(URL))
     }
-}
+};
   
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);

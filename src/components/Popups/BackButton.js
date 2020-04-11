@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { ReactComponent as BackLogo } from '../../images/back_logo.svg';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import {ReactComponent as BackLogo} from '../../images/back_logo.svg';
 import './backbutton.css';
 
 class BackButton extends Component {
@@ -27,15 +27,15 @@ class BackButton extends Component {
                 })
                 break 
         }
-    }
+    };
 
     render () {
         return (
             <Link to={this.state.href} className='back-button'>
-                <BackLogo className='back-button__logo' />
+                <BackLogo className='back-button__logo' width='45' height='45' />
             </Link>
         )
     }
-}
+};
 
 export default BackButton;

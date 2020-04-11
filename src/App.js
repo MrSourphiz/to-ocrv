@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import {
   Route,
@@ -7,15 +7,15 @@ import {
   withRouter
 } from 'react-router-dom';
 
-import MainPage from './components/MainPage/MainPage'
-import PostList from './components/PostList/PostList'
-import Detail from './components/Detail/Detail'
+import MainPage from './components/MainPage/MainPage';
+import PostList from './components/PostList/PostList';
+import Detail from './components/Detail/Detail';
 
 
 class App extends Component {
 
   render() {
-    const { history } = this.props
+    const {history} = this.props
 
     return (
       <div className="App">
@@ -28,8 +28,8 @@ class App extends Component {
           <Redirect from='/' to='/home'/>
         </Switch>
       </div>
-    );
+    )
   }
-}
+};
 
-export default withRouter(App)
+export default withRouter(App);

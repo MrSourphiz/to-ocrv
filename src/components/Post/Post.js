@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './post.css';
 import Popup from '../Popups/Popup';
 
@@ -14,7 +14,7 @@ class Post extends Component {
         this.setState({
             visible: !this.state.visible
         })
-    }
+    };
 
     checkDescription = () => {
         if (this.props.data.title === '' || this.props.data.description === '') {
@@ -22,7 +22,7 @@ class Post extends Component {
                 description: 'Отсутствует'
             })
         }
-    }
+    };
 
     componentDidMount() {
         if (this.props.path === '/sf') {
@@ -37,7 +37,7 @@ class Post extends Component {
             })
         }
         this.checkDescription()
-    }
+    };
 
     render () {
         const {path, index} = this.props
@@ -50,6 +50,6 @@ class Post extends Component {
         )
             
     }
-}
+};
 
 export default Post;

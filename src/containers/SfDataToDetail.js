@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const SfDataToDetail = (array, index) => {
     const owner = array[index].owner.display_name
@@ -14,7 +14,7 @@ export const SfDataToDetail = (array, index) => {
         } else {
             return 'Решение: нету'
         }
-    }
+    };
 
     return (
         <div className = "postlist">
@@ -29,5 +29,5 @@ export const SfDataToDetail = (array, index) => {
             <p className='detail__description'>Описание: {description}</p>        
             <a className='button__open' href={link} target='_blank' rel='noopener noreferrer'>Открыть тему на Stackoverflow</a>
         </div>
-    );
+    )
   };
