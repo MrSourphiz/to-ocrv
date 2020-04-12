@@ -49,7 +49,7 @@ class Post extends Component {
             </li>
         )
             
-    }
+    };
 };
 
 export default Post;

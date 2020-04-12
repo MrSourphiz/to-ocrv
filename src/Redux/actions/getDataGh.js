@@ -3,7 +3,7 @@ export function getGhDataSuccess(response) {
         type: 'GET_GH_DATA_SUCCESS',
         payload: response
     }
-}
+};
 
 export function getGhData(url) {
     return (dispatch) => {
@@ -14,8 +14,11 @@ export function getGhData(url) {
             .then(response => {
                 if(!response.ok) {
                     dispatch({
-                        type: 'GET_DATA_ERROR',
-                        error: 'response.statusText'
+                        type: 'GET_GH_DATA_ERROR',
+                        error: {
+                            code: response.status,
+                            text: response.statusText
+                        }
                     })
                 }
                 return response;
@@ -23,4 +26,4 @@ export function getGhData(url) {
             .then(response=> response.json())
             .then(response => dispatch(getGhDataSuccess(response)))
     }
-}
+};

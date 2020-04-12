@@ -11,7 +11,7 @@ class Popup extends Component {
         this.setState({
             visible: !this.state.visible
         })
-    }
+    };
 
     render() {
         return (
@@ -23,7 +23,7 @@ class Popup extends Component {
                 <button className = 'popup__close' aria-label='Закрыть' onClick = {this.handleClick}></button>
             </div>
         )
-    }
+    };
 };
 
 export default Popup;

@@ -8,9 +8,8 @@ import {
 } from 'react-router-dom';
 
 import MainPage from './components/MainPage/MainPage';
-import PostList from './components/PostList/PostList';
-import Detail from './components/Detail/Detail';
-
+import PostList from './containers/PostList/PostList';
+import Detail from './containers/Detail/Detail';
 
 class App extends Component {
 
@@ -29,7 +28,7 @@ class App extends Component {
         </Switch>
       </div>
     )
-  }
+  };
 };
 
 export default withRouter(App);

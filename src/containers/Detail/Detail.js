@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import BackButton from '../Popups/BackButton'
-import { SfDataToDetail } from '../../containers/SfDataToDetail'
-import { GhDataToDetail } from '../../containers/GhDataToDetail'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 import './detail.css';
+
+import BackButton from '../../components/Popups/BackButton';
+
+import {SfDataToDetail} from '../../fragments/SfDataToDetail';
+import {GhDataToDetail} from '../../fragments/GhDataToDetail';
 
 class Detail extends Component {
 
@@ -14,7 +16,7 @@ class Detail extends Component {
         } else {
             return GhDataToDetail(dataGh, index)
         }
-    }
+    };
 
     render () {
         const {dataSf, dataGh} = this.props
@@ -26,14 +28,14 @@ class Detail extends Component {
                 {this.renderDetail(dataSf, dataGh, index)}
             </div>
         )
-    }
-}
+    };
+};
 
 const mapStateToProps = state => {
     return {
         dataSf: state.dataSf,
         dataGh: state.dataGh
     }
-}
+};
 
 export default connect(mapStateToProps)(Detail);

@@ -30,4 +30,4 @@ export const SfDataToDetail = (array, index) => {
             <a className='button__open' href={link} target='_blank' rel='noopener noreferrer'>Открыть тему на Stackoverflow</a>
         </div>
     )
-  };
+};

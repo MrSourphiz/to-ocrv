@@ -1,9 +1,9 @@
 export function getSfDataSuccess(response) {
     return {
-        type: 'GET_DATA_SUCCESS',
+        type: 'GET_SF_DATA_SUCCESS',
         payload: response.items
     }
-}
+};
 
 export function getSfData(url) {
     return (dispatch) => {
@@ -14,8 +14,11 @@ export function getSfData(url) {
             .then(response => {
                 if(!response.ok) {
                     dispatch({
-                        type: 'GET_DATA_ERROR',
-                        error: 'response.statusText'
+                        type: 'GET_SF_DATA_ERROR',
+                        error: {
+                            code: response.status,
+                            text: response.statusText
+                        }
                     })
                 }
                 return response;
@@ -23,4 +26,4 @@ export function getSfData(url) {
             .then(response=> response.json())
             .then(response => dispatch(getSfDataSuccess(response)))
     }
-}
+};

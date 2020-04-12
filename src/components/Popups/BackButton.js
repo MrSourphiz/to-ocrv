@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+
+import './backButton.css';
+
 import {ReactComponent as BackLogo} from '../../images/back_logo.svg';
-import './backbutton.css';
 
 class BackButton extends Component {
     state = {
@@ -35,7 +37,7 @@ class BackButton extends Component {
                 <BackLogo className='back-button__logo' width='45' height='45' />
             </Link>
         )
-    }
+    };
 };
 
 export default BackButton;

@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import './mainpage.css';
 
-import { ReactComponent as GitHub } from '../../images/gh_logo.svg';
-import { ReactComponent as StackOverflow } from '../../images/sf_logo.svg';
+import './mainPage.css';
+
+import {ReactComponent as GitHub} from '../../images/gh_logo.svg';
+import {ReactComponent as StackOverflow} from '../../images/sf_logo.svg';
 
 const SECTIONS = [
-    { id: 1, title: 'GitHub', href: '/gh', Icon: GitHub },
-    { id: 2, title: 'Stack Overflow', href: '/sf', Icon: StackOverflow}
+    {id: 1, title: 'GitHub', href: '/gh', Icon: GitHub},
+    {id: 2, title: 'Stack Overflow', href: '/sf', Icon: StackOverflow}
 ];
 
 class MainPage extends Component {
@@ -32,7 +33,7 @@ class MainPage extends Component {
                 </ul>
             </div>
         )
-    }
+    };
 };
 
 export default MainPage;
