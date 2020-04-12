@@ -12,7 +12,8 @@
     text-align: center;
 }
 
-.back-button:hover {
+.back-button:hover,
+.back-button:focus {
     border-color: grey;
 }
 
@@ -21,6 +22,7 @@
     height: 45px;
 }
 
-.back-button:hover > .back-button__logo {
+.back-button:hover > .back-button__logo,
+.back-button:focus > .back-button__logo {
     fill: grey;
 }

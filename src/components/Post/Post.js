@@ -42,9 +42,11 @@ class Post extends Component {
     render () {
         const {path, index} = this.props
         return (
-            <li onClick = {this.handleClick}  className = "post">
-                <h2 className = "post__username">Автор: {this.state.author}</h2>
-                <p className = "post__title">Описание: {this.state.description}</p>
+            <li className = "post">
+                <a onClick = {this.handleClick} href='URL' className = "post__link">
+                    <h2 className = "post__username">Автор: {this.state.author}</h2>
+                    <p className = "post__title">Описание: {this.state.description}</p>
+                </a>
                 {this.state.visible && <Popup visible = {this.state.visible} path={path} index={index}/>}
             </li>
         )

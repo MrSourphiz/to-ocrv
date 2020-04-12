@@ -74,7 +74,8 @@
     margin-bottom: 20px;
 }
 
-.button__open:hover {
+.button__open:hover,
+.button__open:focus {
     background-color: grey;
     border-color: grey;
     cursor: pointer;

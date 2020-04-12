@@ -1,4 +1,7 @@
-.post {
+
+.post__link {
+    display: block;
+
     min-height: 130px;
 
     color: black;
@@ -8,16 +11,14 @@
     border-radius: 5px;
 }
 
-.post:hover,
-.post:focus {
+.post__link:hover,
+.post__link:focus {
     border-color: grey;
     cursor: pointer;
 }
 
-.post:hover > .post__username,
-.post:hover > .post__title,
-.post:focus > .post__username,
-.post:focus > .post__title {
+.post__link:hover,
+.post__link:focus {
     color: grey;
 }
 

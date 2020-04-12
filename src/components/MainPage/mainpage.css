@@ -28,10 +28,12 @@
     color: black;
 }
 
-.main-page__link:hover > .main-page__title {
+.main-page__link:hover > .main-page__title,
+.main-page__link:focus > .main-page__title {
     color: grey;
 }
 
-.main-page__link:hover > .main-page__logo{
+.main-page__link:hover > .main-page__logo,
+.main-page__link:focus > .main-page__logo {
     fill: grey;
 }
